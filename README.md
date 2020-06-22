@@ -32,13 +32,13 @@ In order to balance all windows/containers in the current workspace, simply exec
 <img src="/img/simple.gif" width="800">
 </p>
 
-## Complex
+### Complex
 
 <p align="center">
 <img src="/img/complex.gif" width="800">
 </p>
 
-## Complexer
+### Complexer
 
 <p align="center">
 <img src="/img/complexer.gif" width="800">
