@@ -1,5 +1,5 @@
 # i3-balance-workspace
-i3 IPC routine for balancing window sizes in the currently active workspace. Functionality is similar to the `Emacs` command `M-x balance-windows`.
+i3ipc routine for balancing window sizes in the currently active workspace. Functionality is similar to the `Emacs` command `M-x balance-windows`.
 
 ## Dependencies
 
