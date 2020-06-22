@@ -1,8 +1,8 @@
 ** To-do's:
 *** TODO port code-base to pypi to make it more easily installable
 *** TODO add variant of script that works only on focused elements
-*** TODO try to make refreshing more efficient
-    
+*** TODO try to make refreshing more efficient  
+
 ** Completed:
 *** DONE port to github and share for feedback
     CLOSED: [2020-06-22 Mon 22:28]

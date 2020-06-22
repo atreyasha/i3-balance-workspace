@@ -90,7 +90,6 @@ def recursive_adjustment(containers: List[Con], ids: List[int],
         dim (str): Which dimension to address during adjustment
     """
     redo = True
-    counter = 0
     ideal_dim = (
         sum([getattr(container.rect, dim)
              for container in containers]) / len(containers))
@@ -101,7 +100,6 @@ def recursive_adjustment(containers: List[Con], ids: List[int],
             if reply[0].error is not None:
                 if reply[0].error == "Cannot resize.":
                     redo = True
-                    counter += 1
             workspace = refresh_workspace()
             containers = [workspace.find_by_id(ID) for ID in ids]
 
