@@ -19,7 +19,7 @@ optional arguments:
 In order to balance all windows/containers in the current workspace, simply execute:
 
 ```shell
-./i3_balance_workspace.py
+$ ./i3_balance_workspace.py
 ```
 
 ## Examples
