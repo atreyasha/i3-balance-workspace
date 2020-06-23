@@ -8,7 +8,7 @@
 **** Completed:
 ***** DONE add counters to while and increment end of while instead of in for to see actual count
     CLOSED: [2020-06-23 Tue 12:30]
-***** DONE add failsafe to counter missing data in tree and test with logs on empty workspace -> three edge cases: [[]], [], [Con] -> [Con] is handled gracefully by balance-containers
+***** DONE add failsafe to counter missing data in tree and test with logs on empty workspace -> three edge cases: [[]], [], [Con] -> [Con] is handled gracefully by balance-containers, [[]] can be filtered out in main and [] can be prevented during tree construction
     CLOSED: [2020-06-23 Tue 12:30]
 ***** DONE look into problematic tree structure not showing depth correctly
     CLOSED: [2020-06-23 Tue 11:46]

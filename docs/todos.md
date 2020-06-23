@@ -18,7 +18,8 @@ Completed:
 2.  **DONE** add failsafe to counter missing data in tree and
     test with logs on empty workspace -\> three edge cases: \[\[\]\],
     \[\], \[Con\] -\> \[Con\] is handled gracefully by
-    balance-containers
+    balance-containers, \[\[\]\] can be filtered out in main and \[\]
+    can be prevented during tree construction
 
 3.  **DONE** look into problematic tree structure not showing
     depth correctly
