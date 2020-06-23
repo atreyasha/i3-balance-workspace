@@ -90,10 +90,11 @@ def recursive_adjustment(containers: List[Con], ids: List[int],
         dim (str): Which dimension to address during adjustment
     """
     redo = True
+    counter = 0
     ideal_dim = (
         sum([getattr(container.rect, dim)
              for container in containers]) / len(containers))
-    while redo:
+    while redo and counter < (len(containers) - 1):
         redo = False
         for i in range(len(containers) - 1):
             reply = adjust_container(containers[i], ideal_dim, dim)
@@ -102,6 +103,7 @@ def recursive_adjustment(containers: List[Con], ids: List[int],
                     redo = True
             workspace = refresh_workspace()
             containers = [workspace.find_by_id(ID) for ID in ids]
+        counter += 1
 
 
 def balance_containers(containers: List[Con]) -> None:
@@ -141,11 +143,14 @@ def traverse_workspace(workspace: Con) -> Dict[int, List[List[Con]]]:
             node.nodes for node_list in level_nodes[i - 1]
             for node in node_list if len(node.nodes) > 0
         ]
-        level_nodes[i] = node_collection
-        if any(
-                len(node.nodes) > 0 for node_list in level_nodes[i]
-                for node in node_list):
-            i += 1
+        if len(node_collection) > 0:
+            level_nodes[i] = node_collection
+            if any(
+                    len(node.nodes) > 0 for node_list in level_nodes[i]
+                    for node in node_list):
+                i += 1
+            else:
+                break
         else:
             break
     return level_nodes
@@ -163,6 +168,7 @@ def main(args: Namespace) -> None:
     workspace_tree = traverse_workspace(workspace)
     with timeout(seconds=args.timeout):
         for i in reversed(workspace_tree.keys()):
+            print(i)
             for j in range(len(workspace_tree[i])):
                 containers = workspace_tree[i][j]
                 containers = [
@@ -170,16 +176,17 @@ def main(args: Namespace) -> None:
                     if container.rect.width <= workspace.rect.width
                     and container.rect.height <= workspace.rect.height
                 ]
-                balance_containers(containers)
-                workspace = refresh_workspace()
-                workspace_tree = traverse_workspace(workspace)
+                if len(containers) > 0:
+                    balance_containers(containers)
+                    workspace = refresh_workspace()
+                    workspace_tree = traverse_workspace(workspace)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=arg_metav_formatter)
     parser.add_argument("--timeout",
                         type=int,
-                        default=2,
+                        default=1,
                         help="timeout in seconds for resizing")
     args = parser.parse_args()
     main(args)

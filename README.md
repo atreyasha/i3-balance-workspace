@@ -13,7 +13,7 @@ usage: i3_balance_workspace.py [-h] [--timeout int]
 
 optional arguments:
   -h, --help     show this help message and exit
-  --timeout int  timeout in seconds for resizing (default: 2)
+  --timeout int  timeout in seconds for resizing (default: 1)
 ```
 
 In order to balance all windows/containers in the current workspace, simply execute:
