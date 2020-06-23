@@ -1,25 +1,31 @@
 To-do\'s:
----------
 
-### **TODO**
+1.  **TODO** devise failsafe when both booleans are true -\>
+    would be necessary for only focused elements
 
-### **TODO**
+2.  **TODO** add variant of script that works only on focused
+    elements
 
-### try to make refreshing more efficient
+3.  try to make refreshing more efficient
 
-### port code-base to pypi to make it more easily installable
+4.  port code-base to pypi to make it more easily installable
 
 Completed:
-----------
 
-### **DONE**
+1.  **DONE** add counters to while and increment end of while
+    instead of in for to see actual count
 
-### **DONE**
+2.  **DONE** add failsafe to counter missing data in tree and
+    test with logs on empty workspace -\> three edge cases: \[\[\]\],
+    \[\], \[Con\] -\> \[Con\] is handled gracefully by
+    balance~containers~
 
-### **DONE**
+3.  **DONE** look into problematic tree structure not showing
+    depth correctly
 
-### change timeout to 1 second
+4.  change timeout to 1 second
 
-### **DONE**
+5.  **DONE** port to github and share for feedback
 
-### **DONE**
+6.  **DONE** script exits gracefully even in empty or trivial
+    (singular) workspace

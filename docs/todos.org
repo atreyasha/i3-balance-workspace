@@ -1,19 +1,19 @@
-** To-do's:
+**** To-do's:
 
-*** TODO devise failsafe when both booleans are true -> would be necessary for only focused elements
-*** TODO add variant of script that works only on focused elements
-*** try to make refreshing more efficient 
-*** port code-base to pypi to make it more easily installable
+***** TODO devise failsafe when both booleans are true -> would be necessary for only focused elements
+***** TODO add variant of script that works only on focused elements
+***** try to make refreshing more efficient 
+***** port code-base to pypi to make it more easily installable
 
-** Completed:
-*** DONE add counters to while and increment end of while instead of in for to see actual count
+**** Completed:
+***** DONE add counters to while and increment end of while instead of in for to see actual count
     CLOSED: [2020-06-23 Tue 12:30]
-*** DONE add failsafe to counter missing data in tree and test with logs on empty workspace -> three edge cases: [[]], [], [Con] -> [Con] is handled gracefully by balance_containers
+***** DONE add failsafe to counter missing data in tree and test with logs on empty workspace -> three edge cases: [[]], [], [Con] -> [Con] is handled gracefully by balance_containers
     CLOSED: [2020-06-23 Tue 12:30]
-*** DONE look into problematic tree structure not showing depth correctly
+***** DONE look into problematic tree structure not showing depth correctly
     CLOSED: [2020-06-23 Tue 11:46]
-*** change timeout to 1 second
-*** DONE port to github and share for feedback
+***** change timeout to 1 second
+***** DONE port to github and share for feedback
     CLOSED: [2020-06-22 Mon 22:28]
-*** DONE script exits gracefully even in empty or trivial (singular) workspace
+***** DONE script exits gracefully even in empty or trivial (singular) workspace
     CLOSED: [2020-06-23 Tue 01:50]
