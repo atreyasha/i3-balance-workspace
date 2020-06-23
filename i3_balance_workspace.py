@@ -168,7 +168,6 @@ def main(args: Namespace) -> None:
     workspace_tree = traverse_workspace(workspace)
     with timeout(seconds=args.timeout):
         for i in reversed(workspace_tree.keys()):
-            print(i)
             for j in range(len(workspace_tree[i])):
                 containers = workspace_tree[i][j]
                 containers = [
