@@ -24,7 +24,7 @@ $ ./i3_balance_workspace.py
 
 ## Examples
 
-`i3-balance-workspace` has been tested and shows good performance on simple and complex workspace layouts. Take a look at some examples:
+`i3-balance-workspace` has been tested and shows good performance on both simple and complex workspace layouts. Take a look at some examples:
 
 ### Simple
 
@@ -43,3 +43,7 @@ $ ./i3_balance_workspace.py
 <p align="center">
 <img src="/img/complexer.gif" width="800">
 </p>
+
+## Developments
+
+Further developments to this repository are summarized in our [change-log](docs/todos.md)
