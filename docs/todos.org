@@ -12,7 +12,8 @@
     CLOSED: [2020-06-23 Tue 12:30]
 ***** DONE look into problematic tree structure not showing depth correctly
     CLOSED: [2020-06-23 Tue 11:46]
-***** change timeout to 1 second
+***** DONE change timeout to 1 second
+    CLOSED: [2020-06-23 Tue 13:25]
 ***** DONE port to github and share for feedback
     CLOSED: [2020-06-22 Mon 22:28]
 ***** DONE script exits gracefully even in empty or trivial (singular) workspace

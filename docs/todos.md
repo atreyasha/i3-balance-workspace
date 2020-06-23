@@ -24,7 +24,7 @@ Completed:
 3.  **DONE** look into problematic tree structure not showing
     depth correctly
 
-4.  change timeout to 1 second
+4.  **DONE** change timeout to 1 second
 
 5.  **DONE** port to github and share for feedback
 
