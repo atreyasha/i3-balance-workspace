@@ -27,5 +27,5 @@
     CLOSED: [2020-06-23 Tue 13:25]
 ***** DONE port to github and share for feedback
     CLOSED: [2020-06-22 Mon 22:28]
-***** DONE script exits gracefullf even in empty or trivial (singular) workspace
+***** DONE script exits gracefully even in empty or trivial (singular) workspace
     CLOSED: [2020-06-23 Tue 01:50]

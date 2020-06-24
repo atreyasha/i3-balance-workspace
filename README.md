@@ -1,6 +1,6 @@
 # i3-balance-workspace
 
-Balance windows and workspace sizes in i3wm. Functionality is similar to the `Emacs` command `M-x balance-windows`.
+Balance windows and workspaces in i3wm. Functionality is similar to the `Emacs` command `M-x balance-windows`.
 
 ## Installation
 

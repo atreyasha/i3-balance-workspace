@@ -47,5 +47,5 @@ Completed:
 
 11. **DONE** port to github and share for feedback
 
-12. **DONE** script exits gracefullf even in empty or trivial
+12. **DONE** script exits gracefully even in empty or trivial
     (singular) workspace
