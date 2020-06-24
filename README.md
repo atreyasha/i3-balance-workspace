@@ -20,7 +20,7 @@ $ pip install i3-balance-workspace
     
     c. Execute `poetry build`
     
-    d. Execute `pip install dist/i3_balance_workspace-{meta-data}.whl`, where `{meta-data}` is some variable.
+    d. Execute `pip install dist/i3_balance_workspace-{meta-data}.whl`, where `{meta-data}` is some auto-generated variable.
 
 Either of these options will install this package and place an executable `i3_balance_workspace` in a directory located in your `$PATH` variable. The exact location is dependant on the permissions you provided during installation.
 
