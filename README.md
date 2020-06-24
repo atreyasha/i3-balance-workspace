@@ -14,18 +14,6 @@ $ pip install i3-balance-workspace
 
 2. For Arch-Linux users, install `i3-balance-workspace-git` via the [AUR](https://aur.archlinux.org/packages/i3-balance-workspace-git/).
 
-3. Install locally using `poetry`:
-
-    a. Ensure `poetry` is installed on your system
-    
-    b. Clone this repository and navigate to its root folder
-    
-    c. Execute `poetry build`
-    
-    d. Execute `pip install dist/i3_balance_workspace-{meta-data}.whl`, where `{meta-data}` is some auto-generated variable.
-
-Either of these options will install this package and place an executable `i3_balance_workspace` in a directory located in your `$PATH` variable. The exact location is dependant on the permissions you provided during installation.
-
 ## Usage
 
 ```
