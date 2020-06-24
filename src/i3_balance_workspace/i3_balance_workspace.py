@@ -2,92 +2,70 @@
 # -*- coding: utf-8 -*-
 
 import i3ipc
-import argparse
-import signal
 from typing import List, Dict
-from argparse import Namespace
-from i3ipc import Con, CommandReply
+from argparse import ArgumentParser
+from .utils import arg_metav_formatter, timeout
 
 
-class arg_metav_formatter(argparse.ArgumentDefaultsHelpFormatter,
-                          argparse.MetavarTypeHelpFormatter):
-    """
-    Class to combine argument parsers in order to display meta-variables
-    and defaults for arguments
-    """
-    pass
-
-
-class timeout:
-    """
-    Class to create a timeout setting in case resizing gets stuck on
-    dead or problematic windows [source: https://stackoverflow.com/a/22348885]
-    """
-    def __init__(self, seconds, error_message='Process timed out'):
-        self.seconds = seconds
-        self.error_message = error_message
-
-    def handle_timeout(self, signum, frame):
-        raise TimeoutError(self.error_message)
-
-    def __enter__(self):
-        signal.signal(signal.SIGALRM, self.handle_timeout)
-        signal.alarm(self.seconds)
-
-    def __exit__(self, type, value, traceback):
-        signal.alarm(0)
-
-
-def refresh_workspace() -> Con:
+def refresh_workspace() -> i3ipc.Con:
     """
     Function refreshes i3 connection and returns the latest workspace container
 
     Returns:
-        workspace (Con): workspace container
+        workspace (i3ipc.Con): workspace container
     """
     i3 = i3ipc.Connection()
-    workspace = i3.get_tree().find_focused().workspace()
+    if SCOPE == "workspace":
+        workspace = i3.get_tree().find_focused().workspace()
+    elif SCOPE == "focus":
+        workspace = i3.get_tree().find_focused()
     return workspace
 
 
-def adjust_container(container: Con, ideal_dim: float,
-                     direction: str) -> CommandReply:
+def adjust_container(container: i3ipc.Con, ideal_dim: float,
+                     direction: str) -> i3ipc.CommandReply:
     """
     Function to deterministically adjust a single container
 
     Args:
-        container (Con): Container to adjust
+        container (i3ipc.Con): i3ipc.Container to adjust
         ideal_dim (float): Target dimension in pixels
         direction (str): Direction in which growing/shrinking should happen
 
     Returns:
-        reply (CommandReply): Reply of resizing command given to i3
+        msg (str): Command sent out to i3
+        reply (i3ipc.CommandReply): Reply of resizing command given to i3
     """
     current_dims = [container.rect.width, container.rect.height]
     if direction == "width":
         diff = ideal_dim - current_dims[0]
         if diff >= 0:
-            reply = container.command("resize grow right %d px" % diff)
+            msg = "resize grow right %d px" % diff
         else:
-            reply = container.command("resize shrink right %d px" % abs(diff))
+            msg = "resize shrink right %d px" % abs(diff)
     elif direction == "height":
         diff = ideal_dim - current_dims[1]
         if diff >= 0:
-            reply = container.command("resize grow down %d px" % diff)
+            msg = "resize grow down %d px" % diff
         else:
-            reply = container.command("resize shrink down %d px" % abs(diff))
-    return reply
+            msg = "resize shrink down %d px" % abs(diff)
+    reply = container.command(msg)
+    return msg, reply
 
 
-def recursive_adjustment(containers: List[Con], ids: List[int],
-                         dim: str) -> None:
+def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
+                         dim: str) -> List[i3ipc.Con]:
     """
     Function to recursively adjust list of containers at a given tree level
 
     Args:
-        containers (List[Con]): List of containers to recursively adjust
+        containers (List[i3ipc.Con]): List of containers to recursively adjust
         ids (List[int]): List of id's of respective containers
         dim (str): Which dimension to address during adjustment
+
+    Returns:
+        containers (List[i3ipc.Con]): Update list of containers for other
+        processes to refer back to
     """
     redo = True
     counter = 0
@@ -97,21 +75,34 @@ def recursive_adjustment(containers: List[Con], ids: List[int],
     while redo and counter < (len(containers) - 1):
         redo = False
         for i in range(len(containers) - 1):
-            reply = adjust_container(containers[i], ideal_dim, dim)
+            initial_sample_percentage = containers[i].percent
+            msg, reply = adjust_container(containers[i], ideal_dim, dim)
+            workspace = refresh_workspace()
+            containers = [workspace.find_by_id(ID) for ID in ids]
             if reply[0].error is not None:
                 if reply[0].error == "Cannot resize.":
                     redo = True
-            workspace = refresh_workspace()
-            containers = [workspace.find_by_id(ID) for ID in ids]
+            elif reply[0].success and initial_sample_percentage == containers[
+                    i].percent:
+                redo = False
+                if "grow" in msg:
+                    opp_msg = msg.replace("grow", "shrink")
+                elif "shrink" in msg:
+                    opp_msg = msg.replace("shrink", "grow")
+                containers[i].command(opp_msg)
+                workspace = refresh_workspace()
+                containers = [workspace.find_by_id(ID) for ID in ids]
+                break
         counter += 1
+    return containers
 
 
-def balance_containers(containers: List[Con]) -> None:
+def balance_containers(containers: List[i3ipc.Con]) -> None:
     """
     Function to balance list of containers
 
     Args:
-        containers (List[Con]): List of containers to recursively adjust
+        containers (List[i3ipc.Con]): List of containers to recursively adjust
     """
     ids = [container.id for container in containers]
     adjust_heights = not all(container.rect.height == containers[0].rect.height
@@ -119,20 +110,21 @@ def balance_containers(containers: List[Con]) -> None:
     adjust_widths = not all(container.rect.width == containers[0].rect.width
                             for container in containers)
     if adjust_widths:
-        recursive_adjustment(containers, ids, "width")
+        containers = recursive_adjustment(containers, ids, "width")
     if adjust_heights:
-        recursive_adjustment(containers, ids, "height")
+        containers = recursive_adjustment(containers, ids, "height")
 
 
-def traverse_workspace(workspace: Con) -> Dict[int, List[List[Con]]]:
+def traverse_workspace(
+        workspace: i3ipc.Con) -> Dict[int, List[List[i3ipc.Con]]]:
     """
     Function to traverse and parse the workspace tree by level
 
     Args:
-        workspace (Con): Workspace container
+        workspace (i3ipc.Con): Workspace container
 
     Returns:
-        level_nodes (Dict[int, List[List[Con]]]): Dictionary mapping of
+        level_nodes (Dict[int, List[List[i3ipc.Con]]]): Dictionary mapping of
         workspace tree
     """
     node_collection = workspace.nodes
@@ -156,14 +148,24 @@ def traverse_workspace(workspace: Con) -> Dict[int, List[List[Con]]]:
     return level_nodes
 
 
-def main(args: Namespace) -> None:
+def main() -> None:
     """
     Main function to balance i3 window sizes with timeout as failsafe
     in case of problematic recursions or stale windows
-
-    Args:
-        args (Namespace): Argument namespace parsed via command-line
     """
+    parser = ArgumentParser(formatter_class=arg_metav_formatter)
+    parser.add_argument("--scope",
+                        type=str,
+                        default="workspace",
+                        choices=["workspace", "focus"],
+                        help="scope of resizing containers")
+    parser.add_argument("--timeout",
+                        type=int,
+                        default=1,
+                        help="timeout in seconds for resizing")
+    args = parser.parse_args()
+    global SCOPE
+    SCOPE = args.scope
     workspace = refresh_workspace()
     workspace_tree = traverse_workspace(workspace)
     with timeout(seconds=args.timeout):
@@ -182,10 +184,4 @@ def main(args: Namespace) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(formatter_class=arg_metav_formatter)
-    parser.add_argument("--timeout",
-                        type=int,
-                        default=1,
-                        help="timeout in seconds for resizing")
-    args = parser.parse_args()
-    main(args)
+    main()
