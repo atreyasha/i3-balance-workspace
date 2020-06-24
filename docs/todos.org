@@ -1,11 +1,12 @@
 **** To-do's:
-
-***** TODO port code-base to aur and make installable to bins
 ***** TODO add makefile to manage updates to poetry, git-tags and AUR, as well as building and publishing
-***** add balance workspace test with fixtures and fake trees etc
+***** TODO add specific changelog (with versions and updates) and todo's file, have them for different purposes
+***** add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases
 ***** try to make refreshing more efficient 
-
+      
 **** Completed:
+***** DONE port code-base to aur and make installable to bins
+      CLOSED: [2020-06-24 Wed 23:32]
 ***** DONE add instructions to install locally with setuptools and wheels
       CLOSED: [2020-06-24 Wed 20:35]
 ***** DONE update readme and add new gifs for functionatity displays -> try without picom to see if animation looks any better

@@ -12,7 +12,9 @@ Below are available options to install this python package:
 $ pip install i3-balance-workspace
 ```
 
-2. Install locally using `poetry`:
+2. For Arch-Linux users, install `i3-balance-workspace-git` via the [AUR](https://aur.archlinux.org/packages/i3-balance-workspace-git/).
+
+3. Install locally using `poetry`:
 
     a. Ensure `poetry` is installed on your system
     
@@ -20,7 +22,7 @@ $ pip install i3-balance-workspace
     
     c. Execute `poetry build`
     
-    d. Execute `pip install dist/i3_balance_workspace-{meta-data}.whl`, where `{meta-data}` is some variable.
+    d. Execute `pip install dist/i3_balance_workspace-{meta-data}.whl`, where `{meta-data}` is some auto-generated variable.
 
 Either of these options will install this package and place an executable `i3_balance_workspace` in a directory located in your `$PATH` variable. The exact location is dependant on the permissions you provided during installation.
 
@@ -49,7 +51,7 @@ Alternatively, it is possible to only balance the windows that are in focus. For
 $ i3_balance_workspace --scope focus
 ```
 
-In order to get the full benefit of this routine, it is recommended to create i3 keybindings for this command. Below is an example keybinding which can be appended to your i3 `config` file.
+In order to get the full benefit of this routine, it is recommended to initialize i3 persistent keybindings. Below are example keybindings which can be appended to your i3 `config` file.
 
 ```config
 bindsym $mod+b exec "i3_balance_workspace --scope focus"
