@@ -1,15 +1,17 @@
 **** To-do's:
 
-***** TODO update readme and add new gifs for functionatity displays -> try without picom to see if animation looks any better
-***** TODO add information about pip, add updated information on usage
-
-***** TODO add instructions to install locally with setuptools and wheels
 ***** TODO port code-base to aur and make installable to bins
 ***** TODO add makefile to manage updates to poetry, git-tags and AUR, as well as building and publishing
 ***** add balance workspace test with fixtures and fake trees etc
 ***** try to make refreshing more efficient 
 
 **** Completed:
+***** DONE add instructions to install locally with setuptools and wheels
+      CLOSED: [2020-06-24 Wed 20:35]
+***** DONE update readme and add new gifs for functionatity displays -> try without picom to see if animation looks any better
+      CLOSED: [2020-06-24 Wed 20:35]
+***** DONE add information about pip, add updated information on usage
+      CLOSED: [2020-06-24 Wed 20:35]
 ***** DONE devise failsafe when both booleans are true -> would be necessary for only focused elements
       CLOSED: [2020-06-24 Wed 15:21]
 ***** DONE add variant of script that works only on focused elements

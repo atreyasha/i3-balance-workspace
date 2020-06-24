@@ -52,8 +52,8 @@ $ i3_balance_workspace --scope focus
 In order to get the full benefit of this routine, it is recommended to create i3 keybindings for this command. Below is an example keybinding which can be appended to your i3 `config` file.
 
 ```config
-bindsym $mod+Shift+b exec "i3_balance_workspace"
 bindsym $mod+b exec "i3_balance_workspace --scope focus"
+bindsym $mod+Shift+b exec "i3_balance_workspace"
 ```
 
 ## Examples
