@@ -1,9 +1,12 @@
 **** To-do's:
 
-***** TODO add makefile to manage updates to poetry, git-tags and AUR
-***** TODO port code-base to pypi/aur and make installable to bins, add information on OS and compatibility
-***** TODO update readme and add new gifs for functionatity displays -> add information about pip and aur installations, add information about i3-gaps and extra pipelines
-***** add balance_w rkspace test with fixtures and fake trees etc
+***** TODO update readme and add new gifs for functionatity displays -> try without picom to see if animation looks any better
+***** TODO add information about pip, add updated information on usage
+
+***** TODO add instructions to install locally with setuptools and wheels
+***** TODO port code-base to aur and make installable to bins
+***** TODO add makefile to manage updates to poetry, git-tags and AUR, as well as building and publishing
+***** add balance workspace test with fixtures and fake trees etc
 ***** try to make refreshing more efficient 
 
 **** Completed:
