@@ -69,7 +69,7 @@ bindsym $mod+b exec "i3_balance_workspace --scope focus"
 ### Scope: Focused windows
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/master/img/windows.gif" width="500">
+<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/master/img/windows.gif" width="800">
 </p>
 
 ## Bugs
