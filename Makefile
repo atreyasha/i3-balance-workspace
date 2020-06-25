@@ -15,7 +15,7 @@ build:
 .PHONY: install
 install: build
 	version="$$(grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')"; \
-  pip install "$(BUILD)/i3_balance_workspace-$$version-py3-none-any.whl"
+	pip install "$(BUILD)/i3_balance_workspace-$$version-py3-none-any.whl"
 
 .PHONY: uninstall
 uninstall:
