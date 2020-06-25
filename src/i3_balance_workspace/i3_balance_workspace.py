@@ -169,7 +169,7 @@ def main() -> None:
     workspace = refresh_workspace()
     workspace_tree = traverse_workspace(workspace)
     with timeout(seconds=args.timeout):
-        for i in reversed(workspace_tree.keys()):
+        for i in sorted(workspace_tree.keys(), reverse=True):
             for j in range(len(workspace_tree[i])):
                 containers = workspace_tree[i][j]
                 containers = [

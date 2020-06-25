@@ -2,7 +2,7 @@
 _module='i3-balance-workspace'
 
 pkgname="$_module-git"
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="Balance windows and workspaces in i3wm"
 url='https://github.com/atreyasha/i3-balance-workspace'

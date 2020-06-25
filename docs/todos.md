@@ -1,7 +1,9 @@
 To-do\'s:
 
 1.  **TODO** add makefile to manage updates to poetry,
-    git-tags and AUR, as well as building and publishing
+    git-tags and AUR, as well as building and publishing -\> make this
+    reusable as much as possible and bump to sync everything together
+    soon
 
 2.  **TODO** add specific changelog (with versions and
     updates) and todo\'s file, have them for different purposes
