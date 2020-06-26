@@ -7,21 +7,8 @@
 #
 # To enable this hook, rename this file to "pre-commit".
 
-# check for python dependency commands
-# test_pipreqs=$(command -v pipreqs)
-# test_poetry=$(command -v poetry)
-# check if develop.org has been staged for commit
 develop_change=$(git diff --cached --exit-code ./docs/todos.org \
                      > /dev/null; echo $?)
-
-# update requirements.txt given conditions
-# if [ -f "./poetry.lock" ] && [ -n "$test_poetry" ]; then
-#   poetry export -f requirements.txt --without-hashes -o requirements.txt
-#   git add "requirements.txt"
-# elif [ ! -f "./poetry.lock" ] && [ -n "$test_pipreqs" ]; then
-#   pipreqs --force .
-#   git add "requirements.txt"
-# fi
 
 # update develop.md given conditions
 if [ -f ./docs/todos.org ] && [ "$develop_change" -eq "1" ]; then

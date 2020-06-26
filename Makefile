@@ -4,7 +4,7 @@ PKG_RELEASE_NAME = i3-balance-workspace
 PKG_RELEASE_NAME_AUR = $(PKG_RELEASE_NAME)-git
 PKG_LOCAL_NAME = i3_balance_workspace
 
-$(GIT_HOOKS)/pre-commit: ./hooks/pre-commit.sample
+$(GIT_HOOKS)/pre-commit: ./hooks/pre-commit
 	cp --force $< $@
 
 .PHONY: pre_commit_hook
@@ -49,5 +49,5 @@ release:
 		poetry publish --build; \
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
-		./aur-release "$$version" "$(PKG_RELEASE_NAME_AUR)" "./PKGBUILD"; \
+		./aur-release.sh "$$version" "$(PKG_RELEASE_NAME_AUR)" "./PKGBUILD"; \
 	fi;
