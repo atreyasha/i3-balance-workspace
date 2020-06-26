@@ -191,7 +191,7 @@ def traverse_workspace(
             if any(
                     len(node.nodes) > 0 for node_list in level_nodes[i]
                     for node in node_list):
-                # If any nodes appended have child nodes, keep expanding
+                # If any nodes appended have child nodes, keep expanding.
                 # If not, break this while-loop
                 i += 1
             else:
