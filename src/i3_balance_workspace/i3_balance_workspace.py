@@ -113,8 +113,8 @@ def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
                     redo = True
             elif reply[0].success and initial_sample_percentage == containers[
                     i].percent:
-                # Although sucessful, the container's percentage did not change
-                # this error arises mainly in i3-gaps where a container is
+                # Although sucessful, the container's percentage didn't change.
+                # This error arises mainly in i3-gaps where a container is
                 # erroneously adjusted in a direction where it would not need
                 # to be adjusted without gaps. Essentially gaps contribute to
                 # some misleading dimensions which cause this problem.
