@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "i3-balance-workspace"
-version = "1.5.0"
+version = "1.5.1"
 readme = "README.md"
 description = "Balance windows and workspaces in i3wm"
 authors = ["Atreya Shankar <35427332+atreyasha@users.noreply.github.com>"]
