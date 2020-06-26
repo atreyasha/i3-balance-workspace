@@ -1,4 +1,3 @@
-SHELL = /bin/bash
 BUILD = ./dist
 GIT_HOOKS = ./.git/hooks
 PKG_RELEASE_NAME = i3-balance-workspace
@@ -38,8 +37,12 @@ release.patch: release
 
 .PHONY: release
 release:
-	[ -n "$(VERSION)" ]
-	poetry publish --build
-	git tag -m v$(VERSION) v$(VERSION)
-	git push --follow-tags
-	./aur-release "$(VERSION)" "$(PKG_RELEASE_NAME_AUR)" "./PKGBUILD"
+	version=$(VERSION); \
+	if [ -z $$version ]; then \
+		exit 1; \
+	else \
+		poetry publish --build; \
+		git tag -m v$$version v$$version; \
+		git push --follow-tags; \
+		./aur-release "$$version" "$(PKG_RELEASE_NAME_AUR)" "./PKGBUILD"; \
+	fi;
