@@ -1,8 +1,8 @@
 # i3-balance-workspace
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/atreyasha/i3-balance-workspace?color=green&label=release&logo=GitHub)](https://github.com/atreyasha/i3-balance-workspace/tags)
-[![PyPI](https://img.shields.io/pypi/v/i3-balance-workspace?color=green&logo=pypi&logoColor=yellow)](https://pypi.org/project/i3-balance-workspace/)
-[![AUR version](https://img.shields.io/aur/version/i3-balance-workspace-git?color=green&logo=Arch%20Linux)](https://aur.archlinux.org/packages/i3-balance-workspace-git/)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/atreyasha/i3-balance-workspace?color=brightgreen&label=release&logo=GitHub)](https://github.com/atreyasha/i3-balance-workspace/tags)
+[![PyPI](https://img.shields.io/pypi/v/i3-balance-workspace?color=brightgreen&logo=pypi&logoColor=yellow)](https://pypi.org/project/i3-balance-workspace/)
+[![AUR version](https://img.shields.io/aur/version/i3-balance-workspace-git?color=brightgreen&logo=Arch%20Linux)](https://aur.archlinux.org/packages/i3-balance-workspace-git/)
 
 Balance windows and workspaces in i3wm. Functionality is similar to the `Emacs` command `M-x balance-windows`.
 
