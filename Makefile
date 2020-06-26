@@ -41,11 +41,10 @@ release:
 	if [ -z $$version ]; then \
 		exit 1; \
 	else \
-		git add pyproject.toml; \
-		git commit pyproject.toml; \
 		sed -i -re "s/pkgver=([0-9.]*)/pkgver=$$version/g" PKGBUILD; \
+		git add pyproject.toml; \
 		git add PKGBUILD; \
-		git commit PKGBUILD; \
+		git commit -m "Release v$$version"; \
 		poetry publish --build; \
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
