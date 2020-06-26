@@ -1,17 +1,22 @@
 To-do\'s:
 
-1.  **TODO** add makefile to manage updates to poetry,
+1.  **TODO** update git release tag to latest commit after
+    makefile
+
+2.  **TODO** add makefile to manage updates to poetry,
     git-tags and AUR, as well as building and publishing -\> make this
     reusable as much as possible and bump to sync everything together
     soon
 
-2.  **TODO** add specific changelog (with versions and
+3.  **TODO** add specific changelog (with versions and
     updates) and todo\'s file, have them for different purposes
 
-3.  add balance workspace test with fixtures and fake trees to simulate
+4.  add copy of license to scripts
+
+5.  add balance workspace test with fixtures and fake trees to simulate
     handling of simple/difficult cases
 
-4.  try to make refreshing more efficient
+6.  try to make refreshing more efficient
 
 Completed:
 

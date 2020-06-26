@@ -4,8 +4,6 @@ Balance windows and workspaces in i3wm. Functionality is similar to the `Emacs` 
 
 ## Installation
 
-Below are available options to install this python package:
-
 1. Install from PyPi (Python Package Index) using `pip`:
 
 ```shell

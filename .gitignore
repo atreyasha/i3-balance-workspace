@@ -1,4 +1,6 @@
 *.pyc
 *.temp
+*.egg-info
 dist/
 i3-balance-workspace-git/
+poetry.lock
