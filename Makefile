@@ -41,6 +41,7 @@ release:
 	if [ -z $$version ]; then \
 		exit 1; \
 	else \
+		git checkout master
 		sed -i -re "s/pkgver=([0-9.]*)/pkgver=$$version/g" PKGBUILD; \
 		git add pyproject.toml; \
 		git add PKGBUILD; \
