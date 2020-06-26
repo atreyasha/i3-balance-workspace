@@ -14,9 +14,9 @@ def refresh_workspace() -> i3ipc.Con:
     Returns:
         workspace (i3ipc.Con): workspace container
     """
-    # retrieve i3 connection
+    # Retrieve i3 connection
     i3 = i3ipc.Connection()
-    # depending on desired scope, get workspace or focused container
+    # Depending on desired scope, get workspace or focused container
     if SCOPE == "workspace":
         workspace = i3.get_tree().find_focused().workspace()
     elif SCOPE == "focus":
