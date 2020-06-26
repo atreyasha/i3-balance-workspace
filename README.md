@@ -1,5 +1,9 @@
 # i3-balance-workspace
 
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/atreyasha/i3-balance-workspace?color=green&label=release&logo=GitHub)
+![PyPI](https://img.shields.io/pypi/v/i3-balance-workspace?color=green)
+![AUR version](https://img.shields.io/aur/version/i3-balance-workspace-git?color=green&logo=Arch%20Linux)
+
 Balance windows and workspaces in i3wm. Functionality is similar to the `Emacs` command `M-x balance-windows`.
 
 ## Installation
