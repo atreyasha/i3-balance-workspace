@@ -146,8 +146,8 @@ def balance_containers(containers: List[i3ipc.Con]) -> None:
     """
     # Capture the ids of the relevant containers to re-use later
     ids = [container.id for container in containers]
-    # Check if all containers have the same heights and widths
-    # if either heights or widths differ, create a boolean to adjust them.
+    # Check if all containers have the same heights and widths.
+    # If either heights or widths differ, create a boolean to adjust them.
     # Ideally (on i3 without gaps), only either adjust_heights or adjust_widths
     # should be 'True'. However, on i3-gaps both can be 'True' beacuse of
     # issues related to dimension computation with the presence of gaps.
