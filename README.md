@@ -8,6 +8,8 @@ Balance windows and workspaces in i3wm. Functionality is similar to the `Emacs` 
 
 ## Installation
 
+Following are available options to install `i3-balance-workspace`:
+
 1. Install from PyPi (Python Package Index) using `pip`:
 
 ```shell
@@ -15,6 +17,12 @@ $ pip install i3-balance-workspace
 ```
 
 2. For Arch-Linux users, install `i3-balance-workspace-git` via the [AUR](https://aur.archlinux.org/packages/i3-balance-workspace-git/).
+
+3. To install locally, ensure `poetry` and `pip` are installed on your system. Then execute:
+
+```shell
+$ make install
+```
 
 ## Usage
 
