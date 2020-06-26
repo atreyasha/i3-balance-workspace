@@ -43,7 +43,7 @@ $ i3_balance_workspace --scope focus
 
 In order to get the full benefit of this routine, it is recommended to initialize i3 persistent keybindings. Below are example keybindings which can be appended to your i3 `config` file.
 
-```config
+```shell
 bindsym $mod+b exec "i3_balance_workspace --scope focus"
 bindsym $mod+Shift+b exec "i3_balance_workspace"
 ```
