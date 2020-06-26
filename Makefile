@@ -41,6 +41,8 @@ release:
 	if [ -z $$version ]; then \
 		exit 1; \
 	else \
+		git add pyproject.toml; \
+		git commit pyproject.toml; \
 		poetry publish --build; \
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
