@@ -38,11 +38,7 @@ git clone "ssh://aur@aur.archlinux.org/$name" "$tmp_repo"
     cp -v "$src_repo/$file" .
     git add "$file"
   done
-
-  sed -i "
-    s/^pkgver=.*$/pkgver=$version/; s/=v/=/;
-    s/^pkgrel=.*$/pkgrel=1/;" PKGBUILD
-
+ 
   updpkgsums
   makepkg --printsrcinfo > .SRCINFO
 

@@ -43,6 +43,9 @@ release:
 	else \
 		git add pyproject.toml; \
 		git commit pyproject.toml; \
+		sed -i -re "s/pkgver=([0-9.]*)/pkgver=$$version/g" PKGBUILD; \
+		git add PKGBUILD; \
+		git commit PKGBUILD; \
 		poetry publish --build; \
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
