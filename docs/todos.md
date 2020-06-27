@@ -6,15 +6,18 @@ To-do\'s:
     commands in simple cases to see if this makes sense and if this
     stops unnecessary loops
 
-2.  **TODO** add balance workspace test with fixtures and
+2.  **TODO** modify main to only process if length is
+    strictly more than one
+
+3.  **TODO** add balance workspace test with fixtures and
     fake trees to simulate handling of simple/difficult cases
 
-3.  **TODO** add specific changelog (with versions and
+4.  **TODO** add specific changelog (with versions and
     updates) and todo\'s file, have them for different purposes
 
-4.  try to make refreshing more efficient
+5.  try to make refreshing more efficient
 
-5.  add copy of license to scripts
+6.  add copy of license to scripts
 
 Completed:
 
