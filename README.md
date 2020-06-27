@@ -2,7 +2,7 @@
 
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/atreyasha/i3-balance-workspace?color=brightgreen&label=release&logo=GitHub)](https://github.com/atreyasha/i3-balance-workspace/tags)
 [![PyPI](https://img.shields.io/pypi/v/i3-balance-workspace?color=brightgreen&logo=pypi&logoColor=yellow)](https://pypi.org/project/i3-balance-workspace/)
-[![AUR version](https://img.shields.io/aur/version/i3-balance-workspace-git?color=brightgreen&logo=Arch%20Linux)](https://aur.archlinux.org/packages/i3-balance-workspace-git/)
+[![AUR version](https://img.shields.io/aur/version/i3-balance-workspace?color=brightgreen&logo=Arch%20Linux)](https://aur.archlinux.org/packages/i3-balance-workspace/)
 
 Balance windows and workspaces in i3wm. Functionality is similar to the `Emacs` command `M-x balance-windows`.
 
@@ -16,7 +16,7 @@ Following are available options to install `i3-balance-workspace`:
     $ pip install i3-balance-workspace
     ```
 
-2. For Arch-Linux users, install `i3-balance-workspace-git` via the [AUR](https://aur.archlinux.org/packages/i3-balance-workspace-git/).
+2. For Arch-Linux users, install `i3-balance-workspace` via the [AUR](https://aur.archlinux.org/packages/i3-balance-workspace/).
 
 3. To install locally, ensure `poetry` and `pip` are installed on your system. Then execute:
 

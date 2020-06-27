@@ -1,7 +1,7 @@
 BUILD = ./dist
 GIT_HOOKS = ./.git/hooks
 PKG_RELEASE_NAME = i3-balance-workspace
-PKG_RELEASE_NAME_AUR = $(PKG_RELEASE_NAME)-git
+PKG_RELEASE_NAME_AUR = $(PKG_RELEASE_NAME)
 PKG_LOCAL_NAME = i3_balance_workspace
 
 $(GIT_HOOKS)/pre-commit: ./hooks/pre-commit

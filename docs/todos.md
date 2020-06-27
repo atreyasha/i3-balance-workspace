@@ -1,14 +1,20 @@
 To-do\'s:
 
-1.  **TODO** add balance workspace test with fixtures and
+1.  **TODO** handle extra case where command failed because
+    no other container in the direction -\> in that case should break
+    loop since this is the wrong direction -\> test script with echoed
+    commands in simple cases to see if this makes sense and if this
+    stops unnecessary loops
+
+2.  **TODO** add balance workspace test with fixtures and
     fake trees to simulate handling of simple/difficult cases
 
-2.  **TODO** add specific changelog (with versions and
+3.  **TODO** add specific changelog (with versions and
     updates) and todo\'s file, have them for different purposes
 
-3.  try to make refreshing more efficient
+4.  try to make refreshing more efficient
 
-4.  add copy of license to scripts
+5.  add copy of license to scripts
 
 Completed:
 

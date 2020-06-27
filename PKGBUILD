@@ -1,7 +1,7 @@
 # Maintainer: Atreya Shankar <shankar.atreya@gmail.com>
 
 _module='i3-balance-workspace'
-pkgname="$_module-git"
+pkgname="$_module"
 pkgver=1.6.2
 pkgrel=1
 pkgdesc="Balance windows and workspaces in i3wm"
