@@ -1,12 +1,15 @@
 **** To-do's:
 
-***** TODO handle extra case where command failed because no other container in the direction -> in that case should break loop since this is the wrong direction -> test script with echoed commands in simple cases to see if this makes sense and if this stops unnecessary loops
-***** TODO modify main to only process if length is strictly more than one
 ***** TODO add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases
+***** TODO add specific debug script to find sources of errors when they do occur
 ***** add specific changelog (with versions and updates) and todo's file, have them for different purposes
 ***** try to make refreshing more efficient 
       
 **** Completed:
+***** DONE handle extra case where command failed because no other container in the direction -> in that case should break loop since this is the wrong direction -> test script with echoed commands in simple cases to see if this makes sense and if this stops unnecessary loops
+      CLOSED: [2020-06-28 Sun 13:02]
+***** DONE modify main to only process if length is strictly more than one
+      CLOSED: [2020-06-28 Sun 13:02]
 ***** DONE update git release tag to latest commit after makefile
       CLOSED: [2020-06-26 Fri 14:32]
 ***** DONE add makefile to manage updates to poetry, git-tags and AUR, as well as building and publishing -> make this reusable as much as possible and bump to sync everything together soon
