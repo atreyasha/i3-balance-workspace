@@ -10,8 +10,8 @@ To-do\'s:
 3.  add specific changelog (with versions and updates) and todo\'s file,
     have them for different purposes
 
-4.  try to make refreshing more efficient, perhaps with connection
-    ~sync~ function
+5.  try to make refreshing more efficient, perhaps with connection
+    private i3ipc sync function
 
 Completed:
 
