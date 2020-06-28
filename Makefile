@@ -49,6 +49,6 @@ release:
 		poetry publish --build; \
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
-		sleep 600; \
+		sleep 300; \
 		./aur-release.sh "$$version" "$(PKG_RELEASE_NAME_AUR)" "./PKGBUILD"; \
 	fi;
