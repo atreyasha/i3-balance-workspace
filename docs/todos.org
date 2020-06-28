@@ -1,9 +1,9 @@
 **** To-do's:
 
-***** TODO add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases
+***** TODO add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases, separate for gaps and non-gaps, add test dependencies such as pytest and Xvfb
 ***** TODO add specific debug script to find sources of errors when they do occur
 ***** add specific changelog (with versions and updates) and todo's file, have them for different purposes
-***** try to make refreshing more efficient 
+***** try to make refreshing more efficient, perhaps with connection _sync function
       
 **** Completed:
 ***** DONE handle extra case where command failed because no other container in the direction -> in that case should break loop since this is the wrong direction -> test script with echoed commands in simple cases to see if this makes sense and if this stops unnecessary loops

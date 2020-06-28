@@ -1,7 +1,8 @@
 To-do\'s:
 
 1.  **TODO** add balance workspace test with fixtures and
-    fake trees to simulate handling of simple/difficult cases
+    fake trees to simulate handling of simple/difficult cases, separate
+    for gaps and non-gaps, add test dependencies such as pytest and Xvfb
 
 2.  **TODO** add specific debug script to find sources of
     errors when they do occur
@@ -9,7 +10,8 @@ To-do\'s:
 3.  add specific changelog (with versions and updates) and todo\'s file,
     have them for different purposes
 
-4.  try to make refreshing more efficient
+4.  try to make refreshing more efficient, perhaps with connection
+    ~sync~ function
 
 Completed:
 
