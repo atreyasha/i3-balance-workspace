@@ -12,12 +12,10 @@ To-do\'s:
 3.  **TODO** add balance workspace test with fixtures and
     fake trees to simulate handling of simple/difficult cases
 
-4.  **TODO** add specific changelog (with versions and
-    updates) and todo\'s file, have them for different purposes
+4.  add specific changelog (with versions and updates) and todo\'s file,
+    have them for different purposes
 
 5.  try to make refreshing more efficient
-
-6.  add copy of license to scripts
 
 Completed:
 

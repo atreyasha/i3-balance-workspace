@@ -111,6 +111,11 @@ def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
                     # continue resizing the next containers and redo the
                     # resize operation on this container
                     redo = True
+                elif reply[0].error == "No second container found in this direction.":
+                    # Due to possible errors with gaps, containers are adjusted
+                    # in meaningless directions, which should be stopped
+                    redo = False
+                    break
             elif reply[0].success and initial_sample_percentage == containers[
                     i].percent:
                 # Although sucessful, the container's percentage didn't change.
@@ -244,9 +249,9 @@ def main() -> None:
                     if container.rect.width <= workspace.rect.width
                     and container.rect.height <= workspace.rect.height
                 ]
-                if len(containers) > 0:
-                    # Only proceed with balancing if there are some
-                    # containers to actually balance
+                if len(containers) > 1:
+                    # Only proceed with balancing if there are more than one
+                    # meainingful containers to actually balance
                     balance_containers(containers)
                     # Refresh the workspace and workspace tree
                     # so that this variable can be re-used dynamically
