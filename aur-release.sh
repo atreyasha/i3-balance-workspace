@@ -1,7 +1,10 @@
 #!/bin/sh
 # Source: https://github.com/pbrisbin/aur-release/blob/master/bin/aur-release
 # Used separately in order to modify the definition of mksrcinfo
-# As well as adjustments to argument shifting
+# as well as adjustments to argument shifting
+# The MIT License (MIT)
+# Copyright (c) 2017 Pat Brisbin <pbrisbin@gmail.com>
+
 set -e
 
 if [ -z "$1" -o "$1" = "-h" -o "$1" = "--help" ]; then
@@ -38,7 +41,7 @@ git clone "ssh://aur@aur.archlinux.org/$name" "$tmp_repo"
     cp -v "$src_repo/$file" .
     git add "$file"
   done
- 
+
   updpkgsums
   makepkg --printsrcinfo > .SRCINFO
 
