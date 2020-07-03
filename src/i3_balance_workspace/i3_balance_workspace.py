@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import i3ipc
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from argparse import ArgumentParser
 from .utils import arg_metav_formatter, timeout
 
@@ -25,7 +25,7 @@ def refresh_workspace() -> i3ipc.Con:
 
 
 def adjust_container(container: i3ipc.Con, ideal_dim: float,
-                     direction: str) -> i3ipc.CommandReply:
+                     direction: str) -> Tuple[str, i3ipc.CommandReply, float]:
     """
     Function to deterministically adjust a single container
 
@@ -37,6 +37,7 @@ def adjust_container(container: i3ipc.Con, ideal_dim: float,
     Returns:
         msg (str): Command sent out to i3
         reply (i3ipc.CommandReply): Reply of resizing command given to i3
+        diff (float): Difference metric applied in resizing
     """
     # Retrieve dimensions of provided container
     current_dims = [container.rect.width, container.rect.height]
@@ -60,7 +61,7 @@ def adjust_container(container: i3ipc.Con, ideal_dim: float,
     # Capture the reply of the command to check success
     reply = container.command(msg)
     # Return both reply and the actual message, in case an error occurs
-    return msg, reply
+    return msg, reply, diff
 
 
 def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
@@ -98,7 +99,7 @@ def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
             # is indeed meaningful and not an illusion
             initial_sample_percentage = containers[i].percent
             # Adjust the container and retrieve message/reply
-            msg, reply = adjust_container(containers[i], ideal_dim, dim)
+            msg, reply, diff = adjust_container(containers[i], ideal_dim, dim)
             # Refresh the workspace and containers to get updated data
             workspace = refresh_workspace()
             containers = [workspace.find_by_id(ID) for ID in ids]
@@ -117,7 +118,7 @@ def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
                     redo = False
                     break
             elif reply[0].success and initial_sample_percentage == containers[
-                    i].percent:
+                    i].percent and int(diff) != 0:
                 # Although sucessful, the container's percentage didn't change.
                 # This error arises mainly in i3-gaps where a container is
                 # erroneously adjusted in a direction where it would not need
