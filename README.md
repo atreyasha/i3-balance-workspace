@@ -78,4 +78,4 @@ In case of any bugs, feel free to open a GitHub issue.
 
 ## Developments
 
-Further developments to this repository are summarized in our [change-log](https://github.com/atreyasha/i3-balance-workspace/blob/master/docs/todos.md).
+Further developments to this repository are summarized in our development [log](https://github.com/atreyasha/i3-balance-workspace/blob/master/docs/develop.md).

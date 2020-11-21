@@ -6,7 +6,7 @@ description = "Balance windows and workspaces in i3wm"
 authors = ["Atreya Shankar <35427332+atreyasha@users.noreply.github.com>"]
 repository = "https://github.com/atreyasha/i3-balance-workspace"
 license = "MIT"
-packages = [{ include = "i3_balance_workspace", from = "src" }]
+packages = [{ include = "i3_balance_workspace"}]
 
 [tool.poetry.dependencies]
 python = ">=3.5"

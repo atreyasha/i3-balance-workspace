@@ -1,14 +1,6 @@
 BUILD = ./dist
-GIT_HOOKS = ./.git/hooks
 PKG_RELEASE_NAME = i3-balance-workspace
-PKG_RELEASE_NAME_AUR = $(PKG_RELEASE_NAME)
 PKG_LOCAL_NAME = i3_balance_workspace
-
-$(GIT_HOOKS)/pre-commit: ./hooks/pre-commit
-	cp --force $< $@
-
-.PHONY: pre_commit_hook
-pre_commit_hook: $(GIT_HOOKS)/pre-commit
 
 .PHONY: build
 build:
@@ -50,5 +42,5 @@ release:
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
 		sleep 300; \
-		./aur-release.sh "$$version" "$(PKG_RELEASE_NAME_AUR)" "./PKGBUILD"; \
+		aur-release "$(PKG_RELEASE_NAME)" "$$version"; \
 	fi;

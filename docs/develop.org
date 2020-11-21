@@ -1,8 +1,14 @@
-**** To-do's:
+#+OPTIONS: ^:nil
+#+OPTIONS: p:t
 
-***** TODO add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases, separate tests for gaps and non-gaps, add test dependencies such as pytest and Xvfb, try to capture various aspects
-***** TODO replace while loop with deterministic for loop in recursive adjustment where the effect of each size change is checked next to adjacent window and this is done until no negative size effects are found -> essentially pre-empt the "cannot resize" error by checking these sizes beforehand to prevent loss of some windows -> useful for edge cases where windows are made so small that they get corrupted, "cannot resize" seems to kick in after erroneous resizes in some cases which allows for negative dimensions
-***** TODO add specific debug script to find sources of errors when they do occur
+**** To-do's:
+***** loosen i3ipc version bound
+***** remove src directory nesting and keep it direct
+***** tink about new features such as balance vertical/horizontal
+***** look into more efficient workspace tree refreshing
+***** add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases, separate tests for gaps and non-gaps, add test dependencies such as pytest and Xvfb, try to capture various aspects
+***** replace while loop with deterministic for loop in recursive adjustment where the effect of each size change is checked next to adjacent window and this is done until no negative size effects are found -> essentially pre-empt the "cannot resize" error by checking these sizes beforehand to prevent loss of some windows -> useful for edge cases where windows are made so small that they get corrupted, "cannot resize" seems to kick in after erroneous resizes in some cases which allows for negative dimensions
+***** add specific debug script to find sources of errors when they do occur
 ***** add specific changelog (with versions and updates) and todo's file, have them for different purposes
 ***** try to make refreshing more efficient, perhaps with connection private i3ipc sync function
       
