@@ -34,13 +34,11 @@ release:
 		exit 1; \
 	else \
 		git checkout master; \
-		sed -i -re "s/pkgver=([0-9.]*)/pkgver=$$version/g" PKGBUILD; \
 		git add pyproject.toml; \
-		git add PKGBUILD; \
 		git commit -m "Release v$$version"; \
-		poetry publish --build; \
 		git tag -m v$$version v$$version; \
 		git push --follow-tags; \
+		poetry publish --build; \
 		sleep 300; \
 		aur-release "$(PKG_RELEASE_NAME)" "$$version"; \
 	fi;
