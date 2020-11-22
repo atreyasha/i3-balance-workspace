@@ -6,14 +6,16 @@
 
 1.  Current
 
-    1.  add balance workspace test with fixtures and fake trees to
-        simulate handling of simple/difficult cases, separate tests for
-        gaps and non-gaps, add test dependencies such as pytest and
-        Xvfb, try to capture various aspects
+    1.  clean code structure for repository
 
     2.  loosen i3ipc version bound to allow more generous installations
 
-    3.  look into more efficient workspace tree refreshing with
+    3.  add balance workspace test with fixtures and fake trees to
+        simulate handling of simple/difficult cases, separate tests for
+        gaps and non-gaps, add test dependencies such as pytest and
+        Xvfb, try to capture various aspects by emulating python-i3ipc
+
+    4.  look into more efficient workspace tree refreshing with
         connection to private i3ipc sync function
 
 2.  Long-term
