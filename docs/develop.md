@@ -6,14 +6,15 @@
 
 1.  Current
 
-    1.  clean code structure for repository
-
-    2.  loosen i3ipc version bound to allow more generous installations
-
-    3.  add balance workspace test with fixtures and fake trees to
+    1.  add balance workspace test with fixtures and fake trees to
         simulate handling of simple/difficult cases, separate tests for
         gaps and non-gaps, add test dependencies such as pytest and
         Xvfb, try to capture various aspects by emulating python-i3ipc
+
+    2.  loosen pypi i3ipc version bound to allow more generous
+        installations
+
+    3.  clean code structure for repository once tests are added
 
     4.  look into more efficient workspace tree refreshing with
         connection to private i3ipc sync function
@@ -30,10 +31,11 @@
         in after erroneous resizes in some cases which allows for
         negative dimensions
 
-    2.  add specific debug script to find sources of errors when they do
-        occur
+    2.  add new features such as balance vertical/horizontal and balance
+        all workspaces
 
-    3.  think about new features such as balance vertical/horizontal
+    3.  add specific debug script to find sources of errors when they do
+        occur
 
     4.  add specific changelog (with versions and updates) and todo\'s
         file, have them for different purposes

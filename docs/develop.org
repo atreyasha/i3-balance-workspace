@@ -3,15 +3,15 @@
 
 *** Tasks
 **** Current
-***** clean code structure for repository
-***** loosen i3ipc version bound to allow more generous installations
-***** add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases, separate tests for gaps and non-gaps, add test dependencies such as pytest and Xvfb, try to capture various aspects by emulating python-i3ipc
+***** add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases, separate tests for gaps and non-gaps, add test dependencies such as pytest and Xvfb, try to capture various aspects by emulating python-i3ipc 
+***** loosen pypi i3ipc version bound to allow more generous installations
+***** clean code structure for repository once tests are added
 ***** look into more efficient workspace tree refreshing with connection to private i3ipc sync function
 
 **** Long-term
 ***** replace while loop with deterministic for loop in recursive adjustment where the effect of each size change is checked next to adjacent window and this is done until no negative size effects are found -> essentially pre-empt the "cannot resize" error by checking these sizes beforehand to prevent loss of some windows -> useful for edge cases where windows are made so small that they get corrupted, "cannot resize" seems to kick in after erroneous resizes in some cases which allows for negative dimensions
+***** add new features such as balance vertical/horizontal and balance all workspaces
 ***** add specific debug script to find sources of errors when they do occur
-***** think about new features such as balance vertical/horizontal
 ***** add specific changelog (with versions and updates) and todo's file, have them for different purposes
       
 *** Completed
