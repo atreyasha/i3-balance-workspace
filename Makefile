@@ -13,7 +13,7 @@ install: build
 
 .PHONY: uninstall
 uninstall:
-	pip uninstall $(PKG_RELEASE_NAME)
+	pip uninstall "$(PKG_RELEASE_NAME)"
 
 .PHONY: release.major
 release.major: VERSION=$(shell poetry version major &> /dev/null; grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')
@@ -29,14 +29,14 @@ release.patch: release
 
 .PHONY: release
 release:
-	version=$(VERSION); \
-	if [ -z $$version ]; then \
+	version="$(VERSION)"; \
+	if [ -z "$$version" ]; then \
 		exit 1; \
 	else \
 		git checkout master; \
 		git add pyproject.toml; \
 		git commit -m "Release v$$version"; \
-		git tag -m v$$version v$$version; \
+		git tag -m "v$$version" "v$$version"; \
 		git push --follow-tags; \
 		poetry publish --build; \
 		sleep 300; \
