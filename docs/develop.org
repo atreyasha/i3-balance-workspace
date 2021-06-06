@@ -4,8 +4,9 @@
 *** Tasks
 **** Current
 ***** add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases, separate tests for gaps and non-gaps, add test dependencies such as pytest and Xvfb, try to capture various aspects by emulating python-i3ipc 
-***** loosen pypi i3ipc version bound to allow more generous installations
-***** apply same python-i3ipc bounds on the PKGBUILD
+***** loosen pypi ~i3ipc~ version bound to allow more generous installations
+***** consider applying same ~python-i3ipc~ bounds on the PKGBUILD, ~>=2.2.1-2~ -> maybe not necessary since this won't affect much
+***** change imports from in ~__init__.py~, since only main is needed
 ***** clean code structure for repository once tests are added
 ***** look into more efficient workspace tree refreshing with connection to private i3ipc sync function
 

@@ -10,14 +10,18 @@
         gaps and non-gaps, add test dependencies such as pytest and
         Xvfb, try to capture various aspects by emulating python-i3ipc
 
-    2.  loosen pypi i3ipc version bound to allow more generous
+    2.  loosen pypi `i3ipc` version bound to allow more generous
         installations
 
-    3.  apply same python-i3ipc bounds on the PKGBUILD
+    3.  consider applying same `python-i3ipc` bounds on the PKGBUILD,
+        `>=2.2.1-2` -\> maybe not necessary since this won\'t affect
+        much
 
-    4.  clean code structure for repository once tests are added
+    4.  change imports from in `__init__.py`, since only main is needed
 
-    5.  look into more efficient workspace tree refreshing with
+    5.  clean code structure for repository once tests are added
+
+    6.  look into more efficient workspace tree refreshing with
         connection to private i3ipc sync function
 
 2.  Long-term
