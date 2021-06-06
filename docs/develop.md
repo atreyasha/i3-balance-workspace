@@ -1,6 +1,5 @@
 ## Table of Contents
 -   [Tasks](#tasks)
--   [Completed](#completed)
 
 ### Tasks
 
@@ -14,9 +13,11 @@
     2.  loosen pypi i3ipc version bound to allow more generous
         installations
 
-    3.  clean code structure for repository once tests are added
+    3.  apply same python-i3ipc bounds on the PKGBUILD
 
-    4.  look into more efficient workspace tree refreshing with
+    4.  clean code structure for repository once tests are added
+
+    5.  look into more efficient workspace tree refreshing with
         connection to private i3ipc sync function
 
 2.  Long-term
@@ -39,101 +40,3 @@
 
     4.  add specific changelog (with versions and updates) and todo\'s
         file, have them for different purposes
-
-### Completed
-
-1.  **DONE** remove src directory nesting and keep it direct
-
-    **CLOSED:** *\[2020-11-21 Sat 19:23\]*
-
-2.  **DONE** no percentage change check seems to be causing
-    errors as well -\> or possibly return diff and ensure diff was not
-    zero
-
-    **CLOSED:** *\[2020-07-03 Fri 22:30\]*
-
-3.  **DONE** handle extra case where command failed because
-    no other container in the direction -\> in that case should break
-    loop since this is the wrong direction -\> test script with echoed
-    commands in simple cases to see if this makes sense and if this
-    stops unnecessary loops
-
-    **CLOSED:** *\[2020-06-28 Sun 13:02\]*
-
-4.  **DONE** modify main to only process if length is
-    strictly more than one
-
-    **CLOSED:** *\[2020-06-28 Sun 13:02\]*
-
-5.  **DONE** update git release tag to latest commit after
-    makefile
-
-    **CLOSED:** *\[2020-06-26 Fri 14:32\]*
-
-6.  **DONE** add makefile to manage updates to poetry,
-    git-tags and AUR, as well as building and publishing -\> make this
-    reusable as much as possible and bump to sync everything together
-    soon
-
-    **CLOSED:** *\[2020-06-26 Fri 14:32\]*
-
-7.  **DONE** port code-base to aur and make installable to
-    bins
-
-    **CLOSED:** *\[2020-06-24 Wed 23:32\]*
-
-8.  **DONE** add instructions to install locally with
-    setuptools and wheels
-
-    **CLOSED:** *\[2020-06-24 Wed 20:35\]*
-
-9.  **DONE** update readme and add new gifs for functionatity
-    displays -\> try without picom to see if animation looks any better
-
-    **CLOSED:** *\[2020-06-24 Wed 20:35\]*
-
-10. **DONE** add information about pip, add updated
-    information on usage
-
-    **CLOSED:** *\[2020-06-24 Wed 20:35\]*
-
-11. **DONE** devise failsafe when both booleans are true -\>
-    would be necessary for only focused elements
-
-    **CLOSED:** *\[2020-06-24 Wed 15:21\]*
-
-12. **DONE** add variant of script that works only on focused
-    elements
-
-    **CLOSED:** *\[2020-06-24 Wed 15:21\]*
-
-13. **DONE** add counters to while and increment end of while
-    instead of in for to see actual count
-
-    **CLOSED:** *\[2020-06-23 Tue 12:30\]*
-
-14. **DONE** add failsafe to counter missing data in tree and
-    test with logs on empty workspace -\> three edge cases: \[\[\]\],
-    \[\], \[Con\] -\> \[Con\] is handled gracefully by
-    balance-containers, \[\[\]\] can be filtered out in main and \[\]
-    can be prevented during tree construction
-
-    **CLOSED:** *\[2020-06-23 Tue 12:30\]*
-
-15. **DONE** look into problematic tree structure not showing
-    depth correctly
-
-    **CLOSED:** *\[2020-06-23 Tue 11:46\]*
-
-16. **DONE** change timeout to 1 second
-
-    **CLOSED:** *\[2020-06-23 Tue 13:25\]*
-
-17. **DONE** port to github and share for feedback
-
-    **CLOSED:** *\[2020-06-22 Mon 22:28\]*
-
-18. **DONE** script exits gracefully even in empty or trivial
-    (singular) workspace
-
-    **CLOSED:** *\[2020-06-23 Tue 01:50\]*
