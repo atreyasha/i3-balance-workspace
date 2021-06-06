@@ -10,7 +10,7 @@ packages = [{ include = "i3_balance_workspace", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.5"
-i3ipc = "^2.2.1"
+i3ipc = ">=2.2.1"
 
 [tool.poetry.dev-dependencies]
 
