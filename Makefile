@@ -13,7 +13,7 @@ install: build
 
 .PHONY: uninstall
 uninstall:
-	pip uninstall "$(PKG_RELEASE_NAME)"
+	pip uninstall --yes "$(PKG_RELEASE_NAME)"
 
 .PHONY: release.major
 release.major: VERSION=$(shell poetry version major &> /dev/null; grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')
