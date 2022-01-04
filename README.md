@@ -63,13 +63,13 @@ bindsym $mod+Shift+b exec "i3_balance_workspace"
 ### Scope: Workspace
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/master/img/workspace.gif" width="800">
+<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/main/img/workspace.gif" width="800">
 </p>
 
 ### Scope: Focused windows
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/master/img/windows.gif" width="800">
+<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/main/img/windows.gif" width="800">
 </p>
 
 ## Bugs
@@ -78,4 +78,4 @@ In case of any bugs, feel free to open a GitHub issue.
 
 ## Developments
 
-Further developments to this repository are summarized in our development [log](https://github.com/atreyasha/i3-balance-workspace/blob/master/docs/develop.md).
+Further developments to this repository are summarized in our development [log](https://github.com/atreyasha/i3-balance-workspace/blob/main/docs/develop.md).
