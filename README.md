@@ -63,13 +63,13 @@ bindsym $mod+Shift+b exec "i3_balance_workspace"
 ### Scope: Workspace
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/main/img/workspace.gif" width="800">
+<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/main/docs/workspace.gif" width="800">
 </p>
 
 ### Scope: Focused windows
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/main/img/windows.gif" width="800">
+<img src="https://raw.githubusercontent.com/atreyasha/i3-balance-workspace/main/docs/windows.gif" width="800">
 </p>
 
 ## Bugs
