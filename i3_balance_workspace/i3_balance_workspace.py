@@ -17,9 +17,9 @@ def refresh_workspace() -> i3ipc.Con:
     # Retrieve i3 connection
     i3 = i3ipc.Connection()
     # Depending on desired scope, get workspace or focused container
-    if SCOPE == "workspace":
+    if SCOPE == "workspace":  # type: ignore
         workspace = i3.get_tree().find_focused().workspace()
-    elif SCOPE == "focus":
+    elif SCOPE == "focus":  # type: ignore
         workspace = i3.get_tree().find_focused()
     return workspace
 
@@ -112,7 +112,8 @@ def recursive_adjustment(containers: List[i3ipc.Con], ids: List[int],
                     # continue resizing the next containers and redo the
                     # resize operation on this container
                     redo = True
-                elif reply[0].error == "No second container found in this direction.":
+                elif reply[
+                        0].error == "No second container found in this direction.":
                     # Due to possible errors with gaps, containers are adjusted
                     # in meaningless directions, which should be stopped
                     redo = False
@@ -229,7 +230,7 @@ def main() -> None:
     # here to mitigate passing this variable to many functions
     # repeatedly
     global SCOPE
-    SCOPE = args.scope
+    SCOPE = args.scope  # type: ignore
     # Generate workspace and tree
     workspace = refresh_workspace()
     workspace_tree = traverse_workspace(workspace)
