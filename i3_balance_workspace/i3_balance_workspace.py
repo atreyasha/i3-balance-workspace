@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import i3ipc
+from .utils import ArgparseFormatter, Timeout
 from typing import List, Dict, Tuple
 from argparse import ArgumentParser
-from .utils import arg_metav_formatter, timeout
+import i3ipc
 
 
 def refresh_workspace() -> i3ipc.Con:
@@ -213,7 +213,7 @@ def main() -> None:
     in case of problematic recursions or stale windows
     """
     # Parse arguments
-    parser = ArgumentParser(formatter_class=arg_metav_formatter)
+    parser = ArgumentParser(formatter_class=ArgparseFormatter)
     parser.add_argument("--scope",
                         type=str,
                         default="workspace",
@@ -234,7 +234,7 @@ def main() -> None:
     workspace = refresh_workspace()
     workspace_tree = traverse_workspace(workspace)
     # Add a timer here to prevent any edge-case problematic recursions
-    with timeout(seconds=args.timeout):
+    with Timeout(seconds=args.timeout):
         for i in sorted(workspace_tree.keys(), reverse=True):
             # Start processing workspace tree bottom-up
             for j in range(len(workspace_tree[i])):
