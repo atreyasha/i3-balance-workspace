@@ -29,12 +29,13 @@ Following are available options to install `i3-balance-workspace`:
 ```
 usage: i3_balance_workspace [-h] [--scope {workspace,focus}] [--timeout <int>]
 
-optional arguments:
-  -h, --help  show this help message and exit
+options:
   --scope     {workspace,focus}
               scope of resizing containers (default: workspace)
   --timeout   <int>
               timeout in seconds for resizing (default: 1)
+  -h, --help  <flag>
+              show this help message and exit
 ```
 
 In order to balance all windows in the current workspace, simply execute:
