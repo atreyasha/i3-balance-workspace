@@ -1,32 +1,32 @@
+#+STARTUP: overview
 #+OPTIONS: ^:nil
 #+OPTIONS: p:t
 
 ** Tasks
-*** Current release
-**** improve ~refresh_workspace~ workflow by using ~i3~ as a global variable and query directly
-***** this should save some computation and reduce the need to re-compute this constantly
-**** improve versioning commands with regex substitutions -> make them more robust
-**** re-do screencasts with keyboard capturing for posterity
-**** re-order repo skeleton to make things tighter -> eg. add ~img~ into ~docs~ 
-***** improve ~utils~ code with more updated standards
-**** look into ~__init__.py~ file and what contents should be inside it
-**** look deeper into how imports are handled with dot importing
-**** add pipeline for ~mypy~ as a simpler code-checker
-**** replace ~pkgrel~ in ~PKGBUILD~ with ~1~ instead of ~3~
-***** add ~aur-release~ argument parsing as per ~Makefile~ in ~downgrade~
-**** look into simplifying executable name where dashes are used instead -> simply rename file in ~pyproject.toml~
-***** consider adding deprecation message or other fallbacks for backward compatibility -> for example releasing two executables
-***** release with major version bump for this change
-***** update own configurations after that
-
 *** Future releases
-**** add balance workspace test with fixtures and fake trees to simulate handling of simple/difficult cases
+**** add unit tests with fake trees
 ***** separate tests for gaps and non-gaps
 ***** add test dependencies such as pytest and Xvfb
 ***** try to capture various aspects by emulating python-i3ipc
 ***** add local machine tests before installation
 ***** add tests with different virtual environments for dependency versions 
-**** replace while loop with deterministic for loop in recursive adjustment where the effect of each size change is checked next to adjacent window and this is done until no negative size effects are found -> essentially pre-empt the "cannot resize" error by checking these sizes beforehand to prevent loss of some windows -> useful for edge cases where windows are made so small that they get corrupted, "cannot resize" seems to kick in after erroneous resizes in some cases which allows for negative dimensions
+**** improve modularity of code and rename functions to more idiomatic variants
+***** improve ~refresh_workspace~ workflow by using ~i3~ as a global variable and query directly
+***** re-think necessity of timeout function -> or find easy cross-platform alternative
+**** replace while loop with deterministic for loop in recursive adjustment
+***** effect of each size change is checked next to adjacent window and this is done until no negative size effects are found
+***** essentially pre-empt the "cannot resize" error by checking these sizes beforehand to prevent loss of some windows
+***** useful for edge cases where windows are made so small that they get corrupted
+***** "cannot resize" seems to kick in after erroneous resizes in some cases which allows for negative dimensions
 **** add new features such as balance vertical/horizontal and balance all workspaces
 **** add specific debug script to find sources of errors when they do occur
 **** add specific changelog (with versions and updates) and todo's file, have them for different purposes
+**** re-do screencasts with keyboard capturing for posterity
+**** look into simplifying executable name where dashes are used instead -> simply rename file in ~pyproject.toml~
+***** consider adding deprecation message or other fallbacks for backward compatibility -> for example releasing two executables -> add debug message into i3 header for indication
+***** release with major version bump for this change
+***** update own configurations after that
+***** update readme with new usage and warning as well
+**** add readme details for development install
+***** add details on replicating virtual environment with lock files
+***** add details on running various tests with ~pytest~ and ~mypy~
