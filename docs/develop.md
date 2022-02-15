@@ -28,6 +28,9 @@
     2.  re-think necessity of timeout function -\> or find easy
         cross-platform alternative
 
+    3.  use more pythonic evaluations for variables and lengths in
+        if-statements
+
 3.  replace while loop with deterministic for loop in recursive
     adjustment
 
@@ -69,6 +72,8 @@
 
 9.  add readme details for development install
 
-    1.  add details on replicating virtual environment with lock files
+    1.  add details of initializing pre-commit hook
 
-    2.  add details on running various tests with `pytest` and `mypy`
+    2.  add details on replicating virtual environment with lock files
+
+    3.  add details on running various tests with `pytest` and `mypy`

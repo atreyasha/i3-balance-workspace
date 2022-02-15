@@ -13,6 +13,7 @@
 **** improve modularity of code and rename functions to more idiomatic variants
 ***** improve ~refresh_workspace~ workflow by using ~i3~ as a global variable and query directly
 ***** re-think necessity of timeout function -> or find easy cross-platform alternative
+***** use more pythonic evaluations for variables and lengths in if-statements
 **** replace while loop with deterministic for loop in recursive adjustment
 ***** effect of each size change is checked next to adjacent window and this is done until no negative size effects are found
 ***** essentially pre-empt the "cannot resize" error by checking these sizes beforehand to prevent loss of some windows
@@ -28,5 +29,6 @@
 ***** update own configurations after that
 ***** update readme with new usage and warning as well
 **** add readme details for development install
+***** add details of initializing pre-commit hook
 ***** add details on replicating virtual environment with lock files
 ***** add details on running various tests with ~pytest~ and ~mypy~
