@@ -1,6 +1,11 @@
 BUILD = ./dist
 PKG_RELEASE_NAME = i3-balance-workspace
-PKG_LOCAL_NAME = i3_balance_workspace
+PKG_LOCAL_NAME = $(shell tr "-" "_" <<< $(PKG_RELEASE_NAME))
+AUR_RELEASE_OPTIONS ?=
+
+.PHONY: init
+init:
+	cp "./hooks/pre-commit" "./.git/hooks/"
 
 .PHONY: build
 build:
@@ -37,7 +42,9 @@ release:
 		git commit -m "Release v$$version"; \
 		git tag -m "v$$version" "v$$version"; \
 		git push --follow-tags; \
-		poetry publish --build; \
+		read -p "PyPi Username: " username; \
+		read -p "PyPi Password: " password; \
+		poetry publish --build --username "$$username" --password "$$password"; \
 		sleep 300; \
-		aur-release "$(PKG_RELEASE_NAME)" "$$version"; \
+		aur-release $(AUR_RELEASE_OPTIONS) "$(PKG_RELEASE_NAME)" "$$version"; \
 	fi;
