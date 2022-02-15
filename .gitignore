@@ -2,4 +2,3 @@
 *.temp
 *.egg-info
 dist/
-poetry.lock
