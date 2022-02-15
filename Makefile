@@ -43,7 +43,7 @@ release:
 		git tag -m "v$$version" "v$$version"; \
 		git push --follow-tags; \
 		read -p "PyPi Username: " username; \
-		read -p "PyPi Password: " password; \
+		read -s -p "PyPi Password: " password; \
 		poetry publish --build --username "$$username" --password "$$password"; \
 		sleep 300; \
 		aur-release $(AUR_RELEASE_OPTIONS) "$(PKG_RELEASE_NAME)" "$$version"; \
