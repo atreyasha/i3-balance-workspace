@@ -32,7 +32,7 @@ release:
 	if [ -z "$$version" ]; then \
 		exit 1; \
 	else \
-		git checkout master; \
+		git checkout main; \
 		git add pyproject.toml; \
 		git commit -m "Release v$$version"; \
 		git tag -m "v$$version" "v$$version"; \
