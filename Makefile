@@ -8,23 +8,22 @@ build:
 
 .PHONY: install
 install: build
-	current_version="$$(grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')"; \
-	pip install "$(BUILD)/$(PKG_LOCAL_NAME)-$$current_version-py3-none-any.whl"
+	pip install "$(BUILD)/$(PKG_LOCAL_NAME)-$(shell poetry version -s)-py3-none-any.whl"
 
 .PHONY: uninstall
 uninstall:
 	pip uninstall --yes "$(PKG_RELEASE_NAME)"
 
 .PHONY: release.major
-release.major: VERSION=$(shell poetry version major &> /dev/null; grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')
+release.major: VERSION = $(shell poetry version major &> /dev/null; poetry version -s)
 release.major: release
 
 .PHONY: release.minor
-release.minor: VERSION=$(shell poetry version minor &> /dev/null; grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')
+release.minor: VERSION = $(shell poetry version minor &> /dev/null; poetry version -s)
 release.minor: release
 
 .PHONY: release.patch
-release.patch: VERSION=$(shell poetry version patch &> /dev/null; grep -r version pyproject.toml | sed -re 's/.*"([0-9.]*)"/\1/g')
+release.patch: VERSION = $(shell poetry version patch &> /dev/null; poetry version -s)
 release.patch: release
 
 .PHONY: release
